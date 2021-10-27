@@ -1,0 +1,2 @@
+# snapwm-config
+snapwm-config
