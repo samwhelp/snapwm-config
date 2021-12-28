@@ -25,6 +25,9 @@ show
 
 ```
 /home/user/.config/snapwm
+├── bin
+│   ├── snapwm-wallpaper-ctrl-default
+│   └── snapwm-wallpaper-ctrl-shuf
 ├── style
 │   ├── bar
 │   │   └── snapwm-bar-clock.sh
@@ -36,7 +39,7 @@ show
 ├── key.conf
 └── rc.conf
 
-3 directories, 7 files
+4 directories, 9 files
 ```
 
 ## Howto

@@ -19,7 +19,7 @@ help:
 .PHONY: help
 
 
-install: autostart-install config-install bar-install picom-install
+install: autostart-install config-install panel-install compositor-install wallpaper-install
 #	tree --dirsfirst ~/.config/snapwm
 .PHONY: install
 
@@ -34,18 +34,21 @@ config-install:
 	install -Dm644 ./snapwm/apps.conf ~/.config/snapwm/apps.conf
 .PHONY: config-install
 
-bar-install:
+panel-install:
 	install -Dm755 ./snapwm/style/bar/snapwm-bar-clock.sh ~/.config/snapwm/style/bar/snapwm-bar-clock.sh
-.PHONY: bar-install
+.PHONY: panel-install
 
-picom-install:
+compositor-install:
 	install -Dm644 ./snapwm/style/picom/picom.conf ~/.config/snapwm/style/picom/picom.conf
-.PHONY: picom-install
+.PHONY: compositor-install
+
+wallpaper-install:
+	install -Dm755 ./snapwm/bin/snapwm-wallpaper-ctrl-shuf ~/.config/snapwm/bin/snapwm-wallpaper-ctrl-shuf
+	install -Dm755 ./snapwm/bin/snapwm-wallpaper-ctrl-default ~/.config/snapwm/bin/snapwm-wallpaper-ctrl-default
+.PHONY: wallpaper-install
 
 
-
-
-remove: autostart-remove config-remove bar-remove picom-remove
+remove: autostart-remove config-remove panel-remove compositor-remove wallpaper-remove
 #	tree --dirsfirst ~/.config/snapwm
 .PHONY: remove
 
@@ -60,14 +63,18 @@ config-remove:
 	rm -f ~/.config/snapwm/apps.conf
 .PHONY: config-remove
 
-bar-remove:
+panel-remove:
 	rm -f  ~/.config/snapwm/style/bar/snapwm-bar-clock.sh
-.PHONY: bar-remove
+.PHONY: panel-remove
 
-picom-remove:
+compositor-remove:
 	rm -f  ~/.config/snapwm/style/picom/picom.conf
-.PHONY: picom-remove
+.PHONY: compositor-remove
 
+wallpaper-remove:
+	rm -f  ~/.config/snapwm/bin/snapwm-wallpaper-ctrl-shuf
+	rm -f  ~/.config/snapwm/bin/snapwm-wallpaper-ctrl-default
+.PHONY: wallpaper-remove
 
 
 test:
