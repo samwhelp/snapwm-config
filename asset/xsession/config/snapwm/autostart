@@ -85,7 +85,11 @@ mod_wallpaper () {
 
 mod_compositor () {
 
-	picom &
+	if [ -f "$HOME/.config/snapwm/style/picom/picom.conf" ]; then
+		picom --config "$HOME/.config/snapwm/style/picom/picom.conf" &
+	else
+		picom &
+	fi
 
 }
 

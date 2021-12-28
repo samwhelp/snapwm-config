@@ -201,15 +201,15 @@ mod_run_terminal () {
 
 
 ################################################################################
-### Head: Model / Snapwm
+### Head: Model / Window Manager
 ##
 
-mod_run_snapwm () {
+mod_run_window_manager () {
 	exec snapwm
 }
 
 ##
-### Tail: Model / Snapwm
+### Tail: Model / Window Manager
 ################################################################################
 
 
@@ -221,7 +221,7 @@ __main__ () {
 	mod_run_environment
 	#mod_run_terminal
 	mod_run_autostart
-	mod_run_snapwm
+	mod_run_window_manager
 }
 
 __main__
