@@ -11,7 +11,7 @@ help:
 	@echo
 	@echo '	$$ make clone'
 	@echo
-	@echo '	$$ make prepare_arch_build'
+	@echo '	$$ make prepare-arch-build'
 	@echo
 	@echo '	$$ make build'
 	@echo
@@ -19,16 +19,14 @@ help:
 	@echo
 	@echo '	$$ make remove'
 	@echo
-	@echo '	$$ make config_install'
-	@echo
 
 .PHONY: help
 
 
-install: snapwm_install xsession_install config_install
+install: snapwm-install xsession-install config-install
 .PHONY: install
 
-remove: snapwm_remove xsession_remove config_remove
+remove: snapwm-remove xsession-remove config-remove
 .PHONY: remove
 
 
@@ -37,9 +35,9 @@ remove: snapwm_remove xsession_remove config_remove
 ## * https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=dwm
 ##
 
-prepare_arch_build:
+prepare-arch-build:
 	sudo pacman -Sy --needed libx11 libxinerama libxft freetype2
-.PHONY: prepare_arch_build
+.PHONY: prepare-arch-build
 
 clone:
 	git clone https://github.com/moetunes/snapwm-stable.git src/snapwm
@@ -49,35 +47,35 @@ build:
 	make -C src/snapwm
 .PHONY: build
 
-snapwm_install: build
+snapwm-install: build
 #	sudo install -Dm755 ./src/snapwm/snapwm /usr/bin/snapwm
 	sudo install -Dm755 ./src/snapwm/snapwm /usr/local/bin/snapwm
-.PHONY: snapwm_install
+.PHONY: snapwm-install
 
 
-snapwm_remove:
+snapwm-remove:
 #	sudo rm -f /usr/bin/snapwm
 	sudo rm -f /usr/local/bin/snapwm
-.PHONY: snapwm_remove
+.PHONY: snapwm-remove
 
 
 
 
-xsession_install:
+xsession-install:
 	make -C ./asset/xsession install
-.PHONY: xsession_install
+.PHONY: xsession-install
 
-xsession_remove:
+xsession-remove:
 	make -C ./asset/xsession remove
-.PHONY: xsession_remove
+.PHONY: xsession-remove
 
 
 
 
-config_install:
+config-install:
 	make -C ./asset/config install
-.PHONY: config_install
+.PHONY: config-install
 
-config_remove:
+config-remove:
 	make -C ./asset/config remove
-.PHONY: config_remove
+.PHONY: config-remove
