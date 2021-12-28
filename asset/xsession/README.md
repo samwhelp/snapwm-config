@@ -12,7 +12,7 @@
 
 | Path | Note |
 | --- | --- |
-| [/usr/share/xsessions/snapwm-session.desktop](snapwm-session.desktop) | start here |
+| [/usr/share/xsessions/snapwm-session.desktop](xsessions/snapwm-session.desktop) | start here |
 | [/usr/share/snapwm/xsessions/snapwm-session](xsessions/snapwm-session) | snapwm-session.desktop call this script |
 
 

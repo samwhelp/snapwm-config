@@ -21,7 +21,7 @@ install: xsession-install config-install
 .PHONY: install
 
 xsession-install:
-	sudo install -Dm644 ./snapwm-session.desktop /usr/share/xsessions/snapwm-session.desktop
+	sudo install -Dm644 ./xsessions/snapwm-session.desktop /usr/share/xsessions/snapwm-session.desktop
 	sudo install -Dm755 ./xsessions/snapwm-session /usr/share/snapwm/xsessions/snapwm-session
 .PHONY: xsession-install
 
