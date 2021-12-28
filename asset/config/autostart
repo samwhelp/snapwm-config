@@ -9,10 +9,10 @@
 
 mod_xresources () {
 
-	#xrdb merge ~/Public/xresources/forest/.Xresources &
+	#xrdb merge ~/.config/snapwm/style/xresources/forest/.Xresources &
 
-	if [ -f "$HOME/Public/xresources/forest/.Xresources" ]; then
-		xrdb merge "$HOME/Public/xresources/forest/.Xresources" &
+	if [ -f "$HOME/.config/snapwm/style/xresources/forest/.Xresources" ]; then
+		xrdb merge "$HOME/.config/snapwm/style/xresources/forest/.Xresources" &
 	fi
 
 }
